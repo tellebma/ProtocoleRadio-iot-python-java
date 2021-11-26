@@ -71,9 +71,9 @@ sudo netplan apply
 
 git clone https://github.com/tellebma/ProtocoleRadio-iot-python-java
 cd ProtocoleRadio-iot-python-java
-echo 'python '+pwd+'/server/controller.py'>./server/start-server.sh
+echo 'python '$PWD'/server/controller.py'>./server/start-server.sh
 
 #LANCER LE SCRIPT :
-./server/start-server.sh
+bash ./server/start-server.sh
 
 ```
