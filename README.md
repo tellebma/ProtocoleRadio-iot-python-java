@@ -23,7 +23,7 @@ depuis le terminal :
 ```bash 
 ssh 192.168.1.1 -l pi
 ```
-config :
+## config Machine Virtuelle (Cas PC CPE...):
 ```bash
 sudo nano /etc/netplan/{tab}
 
@@ -43,7 +43,37 @@ sudo netplan apply
 
 ```
 
+
+# Config Raspberry:
+
 #### Raspberry:
 	id: **pi**
 	pass: **raspberrycpe**
 
+## config Réseau Raspberry.:
+```bash
+sudo nano /etc/netplan/{tab}
+
+:: 
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wnp0s3:
+      dhcp4: yes
+      access-points:
+	network_ssid_name: "SSIDwifi"
+	password: "CléDeSécuritéwifi"
+::
+sudo netplan try
+sudo netplan apply
+
+git clone https://github.com/tellebma/ProtocoleRadio-iot-python-java
+cd ProtocoleRadio-iot-python-java
+echo 'python '+pwd+'/server/controller.py'>./server/start-server.sh
+
+#LANCER LE SCRIPT :
+./server/start-server.sh
+
+```
