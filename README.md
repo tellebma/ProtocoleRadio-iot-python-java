@@ -53,8 +53,10 @@ sudo netplan apply
 ## config Réseau Raspberry.:
 ```bash
 sudo nano /etc/netplan/{tab}
+```
 
-:: 
+```bash
+
 # Let NetworkManager manage all devices on this system
 network:
   version: 2
@@ -65,7 +67,10 @@ network:
       access-points:
 	network_ssid_name: "SSIDwifi"
 	password: "CléDeSécuritéwifi"
-::
+```
+
+
+```bash
 sudo netplan try
 sudo netplan apply
 
