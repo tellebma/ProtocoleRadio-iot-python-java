@@ -79,3 +79,10 @@ echo 'python '$PWD'/server/controller.py'>./server/start-server.sh
 bash ./server/start-server.sh
 
 ```
+
+Lancement automatique ?
+`crontab -e`
+
+```bash
+@reboot /home/pi/ProtocoleRadio-iot-python-java/server/start-server.sh
+```
