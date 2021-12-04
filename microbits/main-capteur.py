@@ -69,7 +69,7 @@ class Secu:
             clearMessage += chr(ord(lettre)-key)
         return clearMessage
         
-    def hash(self,message:str)->str:
+    def checksum(self,message:str)->str:
         """
         fonction de checksum entre les deux microbits.
         Nous permet de verifier l'intégrité du message.
@@ -102,7 +102,7 @@ class ProtocoleRadio:
             recep = Secu().decrypt(recep)
             message_recup = recep.split("|")
             if message_recup[0] == self.moi:
-                if Secu().hash(message_recup[0]+"|"+message_recup[1]+"|"+message_recup[2]) == message_recup[3]:
+                if Secu().checksum(message_recup[0]+"|"+message_recup[1]+"|"+message_recup[2]) == message_recup[3]:
                     #le message s'addresse a moi.
                     return message_recup[1],message_recup[2]# source, message
         return 0,0
