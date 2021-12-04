@@ -22,6 +22,8 @@ def get()->(bool or str):
     
 def ask(fonction:str)->str:
     """
+    Cette fonction n'est pas utilisée sur cette micro:bit...
+    
     Envoie une requete a l'auter microbit, en demandant soit, la température en premier soit, la lumière.
 
     fonction:
