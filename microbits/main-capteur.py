@@ -133,9 +133,9 @@ if __name__ == "__main__":
             add_text(2, 3, "msg:" + reponse)
             previousVal = reponse
         
-        if previousVal == "TL":            
-            add_text(2, 1, "temp: "+ str(temperature()))
-            add_text(2, 2, "lum: " + str(display.read_light_level()))
+        if previousVal == "TL":   
+            add_text(2, 1, "temp: " + str(temperature()))
+            add_text(2, 2, "lum:  " + str(display.read_light_level()))
         else: # previousVal = LT...
-            add_text(2, 1, "lum: " + str(display.read_light_level()))
-            add_text(2, 2, "temp: "+ str(temperature()))
+            add_text(2, 1, "lum:  " + str(display.read_light_level()))
+            add_text(2, 2, "temp: " + str(temperature()))
