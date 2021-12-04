@@ -109,6 +109,10 @@ class ProtocoleRadio:
         Envoie un message crypté sous le format "dest|source|message|checksum"
         """
         to_send_informations = dest+"|"+self.moi+"|"+msg
+        to_send = to_send_informations+"|"+Secu().hash(to_send_informations)        
+        radio.send(Secu().crypt(to_send))
+        #return 1 pour send.
+        return 1
 
 
 """CODE PRINCIPAL POUR LE RECEIVER CONNECTE A LA PASSERELLE"""
