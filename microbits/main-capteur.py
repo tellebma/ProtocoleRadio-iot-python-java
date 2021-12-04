@@ -22,7 +22,7 @@ def get()->(bool or str) and bool:
                 pass
     return False, False
 
-def ask(fonction:str):
+def ask(fonction:str)->str:
     """
     Envoie une requete a l'auter microbit, en demandant soit, la température en premier soit, la lumière.
 
@@ -108,7 +108,7 @@ class ProtocoleRadio:
                     return message_recup[1],message_recup[2]#1 source,message
         return 0,0
 
-    def send_message(self,dest,msg):
+    def send_message(self,dest:str,msg:str)->None:
         """
         Envoie un message crypté sous le format "dest|source|message|checksum"
         """
