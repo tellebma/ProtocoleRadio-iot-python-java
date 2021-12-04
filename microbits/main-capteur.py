@@ -123,7 +123,7 @@ if __name__ == "__main__":
     clear_oled() #on efface l'écran OLED au démarrage
     radio.config(channel=24) #on choisi le channel pour la radio et on l'active
     radio.on()
-    previousVal = True
+    previousVal = "TL"
     while True: #on affiche et refresh en permanence les valeurs de luminosité/température sur l'écran suivant l'ordre demandé par le serveur
         
         reponse = get()           
