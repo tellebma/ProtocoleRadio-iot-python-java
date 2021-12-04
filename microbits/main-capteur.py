@@ -129,6 +129,7 @@ if __name__ == "__main__":
         reponse = get()           
         
         if reponse:
+            clear_oled()
             add_text(2, 3, "msg:" + reponse)
             previousVal = reponse
         
