@@ -39,7 +39,7 @@ class ProtocoleRadio:
             checksum = recep["checksum"]
             
             
-            if message_recup[0] == self.moi:
+            if destination == self.moi:
                 if Secu().checksum(destination+source+message) == checksum:
                     #le message s'addresse a moi.
                     return source,message# source, message
