@@ -47,7 +47,8 @@ class ProtocoleRadio:
 
     def send_message(self,dest,msg):
         """
-        Envoie un message crypté sous le format "dest|source|message|checksum"
+        Envoie un message crypté sous le format '{"source": "2", "message": "coucou", "destination": "1", "checksum": "8"}'
+
         """
         to_send = json.dumps({"destination": dest,"source": self.moi,"message": moi,"checksum":Secu().checksum(dest+self.moi+message)})
         radio.send(Secu().crypt(to_send))
